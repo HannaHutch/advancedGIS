@@ -30,6 +30,10 @@
         <script src="js/labels.js"></script>
         <script src="data/salt_lake_county_1.js"></script>
         <script src="data/2015_2.js"></script>
+        <script src="data/2016_3.js"></script>
+        <script src="data/2017_4.js"></script>
+        <script src="data/2018_5.js"></script>
+        <script src="data/2019_6.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -208,8 +212,255 @@
         });
         bounds_group.addLayer(layer_2015_2);
         map.addLayer(layer_2015_2);
+        function pop_2016_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">objectid</th>\
+                        <td>' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">year</th>\
+                        <td>' + (feature.properties['year'] !== null ? autolinker.link(feature.properties['year'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_2016_3_0() {
+            return {
+                pane: 'pane_2016_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_2016_3');
+        map.getPane('pane_2016_3').style.zIndex = 403;
+        map.getPane('pane_2016_3').style['mix-blend-mode'] = 'normal';
+        var layer_2016_3 = new L.geoJson(json_2016_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_2016_3',
+            layerName: 'layer_2016_3',
+            pane: 'pane_2016_3',
+            onEachFeature: pop_2016_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_2016_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_2016_3);
+        map.addLayer(layer_2016_3);
+        function pop_2017_4(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">objectid</th>\
+                        <td>' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">year</th>\
+                        <td>' + (feature.properties['year'] !== null ? autolinker.link(feature.properties['year'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_2017_4_0() {
+            return {
+                pane: 'pane_2017_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,72,75,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_2017_4');
+        map.getPane('pane_2017_4').style.zIndex = 404;
+        map.getPane('pane_2017_4').style['mix-blend-mode'] = 'normal';
+        var layer_2017_4 = new L.geoJson(json_2017_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_2017_4',
+            layerName: 'layer_2017_4',
+            pane: 'pane_2017_4',
+            onEachFeature: pop_2017_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_2017_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_2017_4);
+        map.addLayer(layer_2017_4);
+        function pop_2018_5(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">objectid</th>\
+                        <td>' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">year</th>\
+                        <td>' + (feature.properties['year'] !== null ? autolinker.link(feature.properties['year'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_2018_5_0() {
+            return {
+                pane: 'pane_2018_5',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_2018_5');
+        map.getPane('pane_2018_5').style.zIndex = 405;
+        map.getPane('pane_2018_5').style['mix-blend-mode'] = 'normal';
+        var layer_2018_5 = new L.geoJson(json_2018_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_2018_5',
+            layerName: 'layer_2018_5',
+            pane: 'pane_2018_5',
+            onEachFeature: pop_2018_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_2018_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_2018_5);
+        map.addLayer(layer_2018_5);
+        function pop_2019_6(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">objectid</th>\
+                        <td>' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['year'] !== null ? autolinker.link(feature.properties['year'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_2019_6_0() {
+            return {
+                pane: 'pane_2019_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_2019_6');
+        map.getPane('pane_2019_6').style.zIndex = 406;
+        map.getPane('pane_2019_6').style['mix-blend-mode'] = 'normal';
+        var layer_2019_6 = new L.geoJson(json_2019_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_2019_6',
+            layerName: 'layer_2019_6',
+            pane: 'pane_2019_6',
+            onEachFeature: pop_2019_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_2019_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_2019_6);
+        map.addLayer(layer_2019_6);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/2015_2.png" /> 2015': layer_2015_2,'<img src="legend/salt_lake_county_1.png" /> salt_lake_county': layer_salt_lake_county_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/2019_6.png" /> 2019': layer_2019_6,'<img src="legend/2018_5.png" /> 2018': layer_2018_5,'<img src="legend/2017_4.png" /> 2017': layer_2017_4,'<img src="legend/2016_3.png" /> 2016': layer_2016_3,'<img src="legend/2015_2.png" /> 2015': layer_2015_2,'<img src="legend/salt_lake_county_1.png" /> salt_lake_county': layer_salt_lake_county_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
